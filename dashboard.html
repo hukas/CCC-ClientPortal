@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Site meta tags -->
+    <title>Dashboard | Calgary Counselling Centre</title>
+    <meta name="keywords" content="Calgary Counselling Centre" />
+    <meta
+      name="description"
+      content="Improving the well-being of individuals and families and strengthening communities by delivering best practices in counselling, training, and research."
+    />
+    <meta name="author" content="Hudson Ukass" />
+    <!-- Bootstrap CDNs -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"
+    />
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <!-- favicon (Tab Icon)-->
+    <link rel="icon" href="images/favicon.png" type="image/gif" />
+    <!-- Bootstrap Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <!-- Chart.js CDN Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"
+      defer
+    ></script>
+    <!-- Font Awesome Icons CDN -->
+    <script
+      src="https://kit.fontawesome.com/93d0f795fa.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <!-- Custom JS -->
+    <script src="js/auth.js" defer></script>
+    <script src="js/init.js" defer></script>
+    <script src="js/progChart.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Main Navigation -->
+    <nav class="shadow navbar sticky-top navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="col-4">
+          <img
+            class="navImage"
+            src="images/cccLogo.png"
+            alt="calgarycounselling"
+          />
+        </div>
+        <div class="col-4 d-none d-sm-none d-md-block">
+          <img src="images/cccDashboardLogo.png" class="clientDashboardLogo" />
+        </div>
+        <div class="col-4 logoutCol">
+          <section class="btn">
+            <div class="navUserName fw-bold" id="navUserTag">Hudson Ukass</div>
+            <div class="navUserID fw-bold" id="customerID"></div>
+          </section>
+          <button
+            href="#"
+            class="col-4 logout btn msans900 border-4 border-info dashboardCard"
+            style="zoom: 100%"
+          >
+            Log out
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- News Carousel -->
+    <rowNews class="row mt-1 mb-2">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/cccBanner.png" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-md-block">
+              <h5>The Benefits of Practicing Mindfulness</h5>
+              <p class="newsSummary">
+                What is Mindfulness, the benefits, and tips for beginners.
+              </p>
+              <button
+                class="
+                  btn btn-info
+                  mt-2
+                  customerStatementBtn
+                  fw-bold
+                  cccDarkGrey
+                "
+                onClick="MyWindow=window.open('https://calgarycounselling.com/blog/the-benefits-of-practicing-mindfulness','MyWindow','width=1000,height=1000'); return false;"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/cccBanner.png" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-md-block">
+              <h5>What to expect in your first counselling session</h5>
+              <p class="newsSummary">
+                Preparation, what is involved, and common questions.
+              </p>
+              <button
+                class="
+                  btn btn-info
+                  mt-2
+                  customerStatementBtn
+                  fw-bold
+                  cccDarkGrey
+                "
+                onClick="MyWindow=window.open('https://calgarycounselling.com/blog/what-to-expect-in-your-first-counselling-session-at-calgary-counselling-centre','MyWindow','width=1000,height=1000'); return false;"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/cccBanner.png" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-md-block">
+              <h5>Making the most of remote counselling</h5>
+              <p class="newsSummary">
+                Benefits, considerations, and how to prepare.
+              </p>
+              <button
+                class="
+                  btn btn-info
+                  mt-2
+                  customerStatementBtn
+                  fw-bold
+                  cccDarkGrey
+                "
+                onClick="MyWindow=window.open('https://calgarycounselling.com/blog/making-the-most-of-remote-counselling','MyWindow','width=1000,height=1000'); return false;"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </rowNews>
+    <!-- Main Content -->
+    <section class="container-fluid">
+      <rowCards class="row">
+        <!-- Next Appointment Card -->
+        <div class="col-xl-3 col-md-6 mb-2">
+          <div
+            class="
+              shadow
+              card
+              border-4 border-primary
+              h-100
+              py-2
+              dashboardCard
+              primaryCard
+            "
+          >
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="fw-bold text-primary text-uppercase mb-1">
+                    Next Appointment
+                  </div>
+                  <div class="h5 mb-0 fw-bold">
+                    December 12, 2021 - 11:30AM<br />
+                    <button
+                      type="button"
+                      class="btn btn-primary mt-1"
+                      onClick="MyWindow=window.open('https://meet.google.com/','MyWindow','width=1000,height=1000'); return false;"
+                    >
+                      Meeting Link
+                    </button>
+                    <button
+                      class="btn btn-primary mx-1 mt-1"
+                      onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=1000,height=1000'); return false;"
+                    >
+                      Test Link
+                    </button>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-calendar text-primary fa-3x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Customer Statement Card -->
+        <div class="col-xl-3 col-md-6 mb-2">
+          <div
+            class="
+              shadow
+              card
+              border-4 border-success
+              h-100
+              py-2
+              dashboardCard
+              successCard
+            "
+          >
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="fw-bold text-success text-uppercase mb-1">
+                    Customer Statement Owing
+                  </div>
+                  <div class="h5 mb-0 fw-bold">
+                    $0.00<br />
+                    <statementLink id="statementButton"></statementLink>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-file-invoice-dollar text-success fa-3x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- New Task Card -->
+        <div class="col-xl-3 col-md-6 mb-2">
+          <div
+            class="
+              shadow
+              card
+              border-4 border-warning
+              h-100
+              py-2
+              dashboardCard
+              warningCard
+            "
+          >
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="fw-bold text-warning text-uppercase mb-1">
+                    NEw Task
+                  </div>
+                  <div class="h5 mb-0 fw-bold">
+                    Permission to Record Sessions<br />
+                    <button
+                      class="btn btn-warning mt-2 customerStatementBtn"
+                      onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=1000,height=1000'); return false;"
+                    >
+                      Fill out Form
+                    </button>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-paste text-warning fa-3x"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Blog Cards Carousel -->
+        <div class="col-xl-3 col-md-6 mb-2">
+          <div
+            class="
+              shadow
+              card
+              border-4 border-info
+              h-100
+              py-2
+              dashboardCard
+              infoCard
+            "
+            id="blogsCardsCarousel"
+          >
+            <div class="card-body">
+              <div
+                id="blogsCarousel"
+                class="carousel slide carousel-fade"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="fw-bold text-info text-uppercase mb-1">
+                          BLOG
+                        </div>
+                        <div class="h5 mb-0 fw-bold">
+                          Dealing with burnout<br />
+                          <button
+                            class="btn btn-info mt-2 customerStatementBtn"
+                            onClick="MyWindow=window.open('https://calgarycounselling.com/blog/dealing-with-burnout','MyWindow','width=1000,height=1000'); return false;"
+                          >
+                            Blog Link
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-newspaper text-info fa-3x"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="fw-bold text-info text-uppercase mb-1">
+                          BLOG
+                        </div>
+                        <div class="h5 mb-0 fw-bold">
+                          Self-care for men<br />
+                          <button
+                            class="btn btn-info mt-2 customerStatementBtn"
+                            onClick="MyWindow=window.open('https://calgarycounselling.com/blog/self-care-for-men','MyWindow','width=1000,height=1000'); return false;"
+                          >
+                            Blog Link
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-newspaper text-info fa-3x"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="fw-bold text-info text-uppercase mb-1">
+                          BLOG
+                        </div>
+                        <div class="h5 mb-0 fw-bold">
+                          Why come to counselling?<br />
+                          <button
+                            class="btn btn-info mt-2 customerStatementBtn"
+                            onClick="MyWindow=window.open('https://calgarycounselling.com/blog/why-do-people-come-to-counselling','MyWindow','width=1000,height=1000'); return false;"
+                          >
+                            Blog Link
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-newspaper text-info fa-3x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </rowCards>
+      <!-- Tabs Panel -->
+      <rowDiv class="row mx-1 shadow" id="tabPanel">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link active text-primary fw-bold"
+              id="upcomingAppointmentsTab"
+              data-bs-toggle="tab"
+              href="#upcomingAppointments"
+              role="tab"
+              aria-controls="upcomingAppointments"
+              aria-selected="true"
+              >Appointments - Upcoming</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link text-primary fw-bold"
+              id="pastAppointmentsTab"
+              data-bs-toggle="tab"
+              href="#pastAppointments"
+              role="tab"
+              aria-controls="pastAppointments"
+              aria-selected="false"
+              >Appointments - Past</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link text-warning fw-bold"
+              id="fitAppTab"
+              data-bs-toggle="tab"
+              href="#fitApp"
+              role="tab"
+              aria-controls="fitApp"
+              aria-selected="false"
+              >FitApp Chart</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link text-warning fw-bold"
+              id="tasksTab"
+              data-bs-toggle="tab"
+              href="#tasks"
+              role="tab"
+              aria-controls="tasks"
+              aria-selected="false"
+              >Tasks</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link text-warning fw-bold"
+              id="resourcesTab"
+              data-bs-toggle="tab"
+              href="#resources"
+              role="tab"
+              aria-controls="resources"
+              aria-selected="false"
+              >Resources</a
+            >
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <!-- Upcoming Appointments -->
+          <div
+            class="tab-pane fade show active appBody"
+            id="upcomingAppointments"
+            role="tabpanel"
+            aria-labelledby="upcomingAppointmentsTab"
+          >
+            <table class="table table-hover">
+              <thead class="table-light">
+                <tr class="upcomingDate bg-primary">
+                  <th scope="col">Date</th>
+                  <th scope="col">Meeting Link</th>
+                  <th scope="col">Test Link</th>
+                  <th scope="col">Placeholder</th>
+                  <th scope="col">Counsellor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">10/22/2021</th>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary"
+                      onClick="MyWindow=window.open('https://meet.google.com/','MyWindow','width=1000,height=1000'); return false;"
+                      >11:30 AM - Meeting</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary"
+                      onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=1000,height=1000'); return false;"
+                      >Take Test</a
+                    >
+                  </td>
+                  <td>Placeholder</td>
+                  <td>Test Counsellor</td>
+                </tr>
+                <tr>
+                  <th scope="row">12/10/2021</th>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://meet.google.com/','MyWindow','width=1000,height=1000'); return false;"
+                      >11:30 AM - Meeting</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=600,height=300'); return false;"
+                      >Take Test</a
+                    >
+                  </td>
+                  <td>Placeholder</td>
+                  <td>Test Counsellor</td>
+                </tr>
+                <tr>
+                  <th scope="row">12/11/2021</th>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://meet.google.com/','MyWindow','width=1000,height=1000'); return false;"
+                      >11:30 AM - Meeting</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=600,height=300'); return false;"
+                      >Take Test</a
+                    >
+                  </td>
+                  <td>Placeholder</td>
+                  <td>Test Counsellor</td>
+                </tr>
+                <tr>
+                  <th scope="row">12/12/2021</th>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://meet.google.com/','MyWindow','width=1000,height=1000'); return false;"
+                      >11:30 AM - Meeting</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=600,height=300'); return false;"
+                      >Take Test</a
+                    >
+                  </td>
+                  <td>Placeholder</td>
+                  <td>Test Counsellor</td>
+                </tr>
+                <tr>
+                  <th scope="row">12/13/2021</th>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://meet.google.com/','MyWindow','width=1000,height=1000'); return false;"
+                      >11:30 AM - Meeting</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=600,height=300'); return false;"
+                      >Take Test</a
+                    >
+                  </td>
+                  <td>Placeholder</td>
+                  <td>Test Counsellor</td>
+                </tr>
+                <tr>
+                  <th scope="row">12/13/2021</th>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://meet.google.com/','MyWindow','width=1000,height=1000'); return false;"
+                      >11:30 AM - Meeting</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=600,height=300'); return false;"
+                      >Take Test</a
+                    >
+                  </td>
+                  <td>Placeholder</td>
+                  <td>Test Counsellor</td>
+                </tr>
+                <tr>
+                  <th scope="row">12/13/2021</th>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://meet.google.com/','MyWindow','width=1000,height=1000'); return false;"
+                      >11:30 AM - Meeting</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="#"
+                      class="btn btn-primary disabled"
+                      onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=600,height=300'); return false;"
+                      >Take Test</a
+                    >
+                  </td>
+                  <td>Placeholder</td>
+                  <td>Test Counsellor</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Past Appointments -->
+          <div
+            class="tab-pane fade"
+            id="pastAppointments"
+            role="tabpanel"
+            aria-labelledby="pastAppointmentsTab"
+          >
+            <div class="appBody">
+              <table class="table table-hover">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Last Paid</th>
+                    <th scope="col">Counsellor</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Amount Owing</th>
+                    <th scope="col">Doc Number</th>
+                    <th scope="col">Receipt Link</th>
+                  </tr>
+                </thead>
+                <tbody id="pastAppTable">
+                  <!-- <tr class="payRow">
+                    <th scope="row">09/12/2021</th>
+                    <td>09/12/2021</td>
+                    <td>Bob Joe</td>
+                    <td>$27.00</td>
+
+                    <td>
+                      <a
+                        href="#"
+                        class="btn payButton"
+                        onClick="MyWindow=window.open('https://www.convergepay.com/hosted-payments/?ssl_txn_auth_token=WoMPpXJvQA%2Btl5vNoh1QlgAAAWxEa%2Bt3?ssl_transaction_type=ccsale&ssl_first_name=Chantal&ssl_last_name=Snodgrass&ssl_amount=27.00&ClientID=I40061496&Invoice=INVS1461419&ssl_email=jamesm@evergrowth.ca&DYNSRC=1&DYNDATA=t8dj2FIE8sWoUSr-fDaTK99m1_PvVahheTPh1TXz5V02rXCxRtp-mD-_Yk5U7DvBLG_0OWIRGYdFPsXZZQKBFfxfEn8oHfqNbolBF96m_UN7fEv-SDMVvWUleqddz2Wi#!/payment-method','MyWindow','width=1000,height=1000'); return false;"
+                        >Pay Now</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">09/12/2021</th>
+                    <td>09/12/2021</td>
+                    <td>Jim Jans</td>
+                    <td>$27.00</td>
+                    <td><a class="btn paidButton"> Receipt </a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">09/12/2021</th>
+                    <td>09/12/2021</td>
+                    <td>Sally Sue</td>
+                    <td>$27.00</td>
+                    <td><a class="btn paidButton"> Receipt </a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">09/12/2021</th>
+                    <td>09/12/2021</td>
+                    <td>Dan Dawn</td>
+                    <td>$27.00</td>
+                    <td><a class="btn paidButton"> Receipt </a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">09/12/2021</th>
+                    <td>09/12/2021</td>
+                    <td>Mark Mans</td>
+                    <td>$27.00</td>
+                    <td><a class="btn paidButton"> Receipt </a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">09/12/2021</th>
+                    <td>09/12/2021</td>
+                    <td>Rue Ross</td>
+                    <td>$27.00</td>
+                    <td><a class="btn paidButton"> Receipt </a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">09/12/2021</th>
+                    <td>09/12/2021</td>
+                    <td>Colin Cole</td>
+                    <td>$27.00</td>
+                    <td><a class="btn paidButton"> Receipt </a></td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Scoring Chart -->
+          <div
+            class="tab-pane fade"
+            id="fitApp"
+            role="tabpanel"
+            aria-labelledby="fitAppTab"
+          >
+            <div class="appBody" id="chartCol">
+              <canvas id="canvas"></canvas>
+            </div>
+          </div>
+          <!-- Tasks -->
+          <div
+            class="tab-pane fade"
+            id="tasks"
+            role="tabpanel"
+            aria-labelledby="tasksTab"
+          >
+            <div class="appBody">
+              <table class="table table-hover">
+                <thead class="table-light">
+                  <tr class="upcomingDate bg-primary">
+                    <th scope="col">Type</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <i class="fas fa-file-signature text-warning fa-2x"></i>
+                    </th>
+                    <td class="fw-bold">Awknowledgement of Services</td>
+                    <td>Please fill out this form</td>
+                    <td>
+                      <a
+                        href="#"
+                        class="btn btn-warning"
+                        onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=1000,height=1000'); return false;"
+                        >Fill Form</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <i class="fas fa-file-signature text-warning fa-2x"></i>
+                    </th>
+                    <td class="fw-bold">Permission to Record Sessions</td>
+                    <td>Please fill out this form</td>
+                    <td>
+                      <a
+                        href="#"
+                        class="btn btn-warning"
+                        onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=1000,height=1000'); return false;"
+                        >Fill Form</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <i class="fas fa-book text-warning fa-2x"></i>
+                    </th>
+                    <td class="fw-bold">Counselling Workbook</td>
+                    <td>Workbook for counselling</td>
+                    <td>
+                      <a
+                        href="#"
+                        class="btn btn-warning"
+                        onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=1000,height=1000'); return false;"
+                        >Open Workbook</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Resources -->
+          <div
+            class="tab-pane fade"
+            id="resources"
+            role="tabpanel"
+            aria-labelledby="resourcesTab"
+          >
+            <div class="appBody">
+              <table class="table table-hover">
+                <thead class="table-light">
+                  <tr class="upcomingDate bg-primary">
+                    <th scope="col">Type</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <i class="fas fa-book-reader text-warning fa-2x"></i>
+                    </th>
+                    <td class="fw-bold">
+                      Driven To Distraction: Recognizing and Coping with
+                      Attention Deficit Disorder from Childhood Through
+                      Adulthood
+                    </td>
+                    <td>Book related to ADD and Development</td>
+                    <td>
+                      <a
+                        href="#"
+                        class="btn btn-warning"
+                        onClick="MyWindow=window.open('https://www.amazon.ca/Driven-Distraction-Recognizing-Attention-Childhood/dp/0684801280/ref=sr_1_2?keywords=driven+to+distraction&qid=1637346374&sr=8-2','MyWindow','width=1000,height=1000'); return false;"
+                        >Book Link</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <i class="fas fa-video text-warning fa-2x"></i>
+                    </th>
+                    <td class="fw-bold">COVID's Effect on Mental Health</td>
+                    <td>Video about the effects of COVID on mental health</td>
+                    <td>
+                      <a
+                        href="#"
+                        class="btn btn-warning"
+                        onClick="MyWindow=window.open('https://s2.q4cdn.com/175719177/files/doc_presentations/Placeholder-PDF.pdf','MyWindow','width=1000,height=1000'); return false;"
+                        >Take Test</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <i class="fas fa-question-circle text-warning fa-2x"></i>
+                    </th>
+                    <td class="fw-bold">Do you have ADD or ADHD?</td>
+                    <td>Online Quiz</td>
+                    <td>
+                      <a
+                        href="#"
+                        class="btn btn-warning"
+                        onClick="MyWindow=window.open('https://theaddquiz.com/','MyWindow','width=1000,height=1000'); return false;"
+                        >Take Quiz</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </rowDiv>
+    </section>
+  </body>
+</html>

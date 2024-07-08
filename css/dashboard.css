@@ -1,0 +1,170 @@
+body {
+  background: #dde1e4;
+  height: 100vh;
+}
+.navImage {
+  height: 3rem;
+}
+.navbar {
+  margin-bottom: 0px;
+  zoom: 80%;
+}
+.carousel img {
+  max-height: 250px;
+  min-height: 150px;
+}
+.userCard {
+  align-items: center;
+  padding: auto;
+}
+.navUserID {
+  color: #00b3be;
+}
+.navUserName {
+  color: #545759;
+}
+.clientDashboardLogo {
+  max-height: 2rem !important;
+  width: auto;
+  margin: auto;
+  display: block;
+}
+.logoutCol {
+  text-align: end;
+}
+@media only screen and (max-width: 730px) {
+  .clientDashboardLogo {
+    display: none;
+    margin: 0% !important;
+    padding: 0% !important;
+  }
+  .logoutCol {
+    height: auto;
+    width: auto;
+    text-align: left;
+  }
+  .navImage {
+    height: 2.5rem;
+    padding: 0%;
+    margin: 0;
+  }
+  .newsSummary {
+    display: none;
+  }
+}
+nav {
+  margin-bottom: 1rem;
+}
+h1 {
+  background-color: #0099a8;
+}
+.appBody {
+  height: 50vh;
+  overflow-y: scroll;
+  background-color: white !important;
+}
+
+@media only screen and (max-width: 730px) {
+  .appBody {
+    height: 10rem !important;
+  }
+}
+
+.customerStatementBtn {
+  width: 13rem !important;
+  height: auto;
+}
+#tabPanel {
+  background-color: #686c6e;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* change transition duration to control the speed of fade effect */
+#blogsCardCarousel .carousel-item {
+  transition: transform 4s ease-in-out !important;
+}
+
+#blogsCardCarousel .carousel-fade .active.carousel-item-start,
+#blogsCardCarousel .carousel-fade .active.carousel-item-end {
+  transition: opacity 1s 4s !important;
+}
+#myTabContent {
+  padding: 0%;
+}
+.dashboardCard {
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 0;
+  zoom: 0.8;
+}
+.primaryCard {
+  border-color: #00b3be !important;
+}
+.successCard {
+  border-color: #545759 !important;
+}
+.warningCard {
+  border-color: #ffb547 !important;
+}
+.infoCard {
+  border-color: #2fe8f1 !important;
+}
+.btn-info {
+  background-color: #2fe8f1 !important;
+  border-color: #2fe8f1 !important;
+}
+.text-info {
+  color: #2fe8f1 !important;
+}
+.btn-primary {
+  background-color: #00b3be !important;
+  border-color: #00b3be !important;
+}
+.text-primary {
+  color: #00b3be !important;
+}
+.text-success {
+  color: #545759 !important;
+}
+.btn-success {
+  background-color: #545759 !important;
+  border-color: #545759 !important;
+}
+.text-warning {
+  color: #ffb547 !important;
+}
+.btn-warning {
+  background-color: #ffb547 !important;
+  border-color: #ffb547 !important;
+}
+.disabled {
+  opacity: 50% !important;
+}
+
+#chartCol {
+  background-color: white;
+}
+
+#appCol {
+  background-color: white;
+}
+
+.invoiceButton {
+  background-color: #007d88;
+  color: white;
+}
+.paymentButton {
+  background-color: #00bfc9;
+  color: white;
+}
+.payButton {
+  background-color: red;
+  color: white;
+}
+.payRow {
+  background-color: rgba(255, 0, 0, 0.192);
+}

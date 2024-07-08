@@ -1,0 +1,30 @@
+@font-face {
+  font-family: msans900;
+  src: url(MuseoSans_900.otf);
+}
+body {
+  font-family: Calibri;
+  max-width: 100% !important;
+  overflow-x: hidden;
+}
+
+.msans900 {
+  font-family: msans900;
+  font: bold;
+  color: #545759 !important;
+}
+.msans900Default {
+  font-family: msans900;
+  font: bold;
+}
+.ccclb {
+  background-color: #00b3be;
+}
+
+.cccdb {
+  background-color: #0099a8 !important;
+}
+
+.cccDarkGrey {
+  color: #545759;
+}
